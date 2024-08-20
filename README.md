@@ -3,12 +3,12 @@
 
 ## Method
 * [DCHMT](https://dl.acm.org/doi/10.1145/3503161.3548187) [ACM MM 2022]
-* DSPH  [PAPER](https://ieeexplore.ieee.org/document/10149001)
-* MITH  [PAPER](https://dl.acm.org/doi/10.1145/3581783.3612411)
-* DNpH  [PAPER](https://ieeexplore.ieee.org/document/10379137)
-* DNPH  [PAPER](https://dl.acm.org/doi/abs/10.1145/3643639)
-* TwDH  [PAPER](https://ieeexplore.ieee.org/document/10487033)
-* DHaPH  [PAPER](https://ieeexplore.ieee.org/abstract/document/10530441)
+* [DSPH](https://ieeexplore.ieee.org/document/10149001) [TCSVT 2023]
+* [MITH](https://dl.acm.org/doi/10.1145/3581783.3612411) [ACM MM 2023]
+* [DNpH](https://ieeexplore.ieee.org/document/10379137) [TMM 2024]
+* [DNPH](https://dl.acm.org/doi/abs/10.1145/3643639) [TOMM 2024]
+* [TwDH](https://ieeexplore.ieee.org/document/10487033) [TMM 2024]
+* [DHaPH](https://ieeexplore.ieee.org/abstract/document/10530441) [TKDE 2024]
 
 
 ## Processing dataset
