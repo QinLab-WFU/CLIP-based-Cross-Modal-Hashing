@@ -42,15 +42,33 @@ You should copy ViT-B-32.pt to this dir.
 
 ## Start
 
-for example
+
+DCHMT:
+> python main.py --method DCHMT --is-train --dataset coco --caption-file caption.mat --index-file index.mat --label-file label.mat --lr 0.001 --output-dim 64 --save-dir ./result/DCHMT/coco/64 --clip-path ./ViT-B-32.pt --batch-size 128
 
 
 DSPH:
-> python main.py --method DSPH --is-train --dataset coco --caption-file caption.mat --index-file index.mat --label-file label.mat --lr 0.001 --output-dim 64 --save-dir ./result/coco/64 --clip-path ./ViT-B-32.pt --batch-size 128 --numclass 80
+> python main.py --method DSPH --is-train --dataset coco --caption-file caption.mat --index-file index.mat --label-file label.mat --lr 0.001 --output-dim 64 --save-dir ./result/DSPH/coco/64 --clip-path ./ViT-B-32.pt --batch-size 128 --numclass 80
+
+
+MITH:
+> python main.py --method MITH --is-train --dataset coco --caption-file caption.mat --index-file index.mat --label-file label.mat --lr 0.001 --output-dim 32 --save-dir ./result/MITH/coco/512 --clip-path ./ViT-B-32.pt --batch-size 128
+
+
+DNpH
+> python main.py --method DNpH-TMM --is-train --dataset coco --caption-file caption.mat --index-file index.mat --label-file label.mat --lr 0.001 --output-dim 32 --save-dir ./result/DNpH-TMM/coco/512 --clip-path ./ViT-B-32.pt --batch-size 128
+
+
+DNPH
+> python main.py --method DNPH-TOMM --is-train --dataset coco --caption-file caption.mat --index-file index.mat --label-file label.mat --lr 0.001 --output-dim 32 --save-dir ./result/DNpH-TMM/coco/512 --clip-path ./ViT-B-32.pt --batch-size 128 --numclass 80
 
  
 TwDH:
-> python main.py --method TwDH --is-train --dataset coco --caption-file caption.mat --index-file index.mat --label-file label.mat --lr 0.001 --output-dim 512 --save-dir ./result/coco/512 --clip-path ./ViT-B-32.pt --batch-size 128
+> python main.py --method TwDH --is-train --dataset coco --caption-file caption.mat --index-file index.mat --label-file label.mat --lr 0.001 --output-dim 512 --save-dir ./result/TwDH/coco/512 --clip-path ./ViT-B-32.pt --batch-size 128
+
+
+DHaPH
+> python main.py --method DHaPH --is-train --dataset coco --caption-file caption.mat --index-file index.mat --label-file label.mat --lr 0.001 --output-dim 32 --save-dir ./result/DHaPH/coco/512 --clip-path ./ViT-B-32.pt --batch-size 128
 
 
 ## Acknowledegements
