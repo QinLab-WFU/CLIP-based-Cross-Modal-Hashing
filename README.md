@@ -43,6 +43,8 @@ You should copy ViT-B-32.pt to this dir.
 ## Start
 
 
+First, the 'method' parameter needs to be changed in main.py. Then, run the following command.
+
 DCHMT:
 > python main.py --method DCHMT --is-train --dataset coco --caption-file caption.mat --index-file index.mat --label-file label.mat --lr 0.001 --output-dim 64 --save-dir ./result/DCHMT/coco/64 --clip-path ./ViT-B-32.pt --batch-size 128
 
