@@ -2,13 +2,13 @@
 
 
 ## Method
-* [DCHMT](https://dl.acm.org/doi/10.1145/3503161.3548187) [ACM MM 2022] [source code](https://github.com/kalenforn/DCHMT)
-* [DSPH](https://ieeexplore.ieee.org/document/10149001) [TCSVT 2023] [source code](https://github.com/QinLab-WFU/DSPH)
-* [MITH](https://dl.acm.org/doi/10.1145/3581783.3612411) [ACM MM 2023] [source code](https://github.com/DarrenZZhang/MM23-MITH)
-* [DNpH](https://ieeexplore.ieee.org/document/10379137) [TMM 2024] [source code](https://github.com/QinLab-WFU/DNpH)
-* [DNPH](https://dl.acm.org/doi/abs/10.1145/3643639) [TOMM 2024] [source code](https://github.com/QinLab-WFU/OUR-DNPH)
-* [TwDH](https://ieeexplore.ieee.org/document/10487033) [TMM 2024] [source code](https://github.com/kalenforn/clip-based-cross-modal-hash/tree/main/runners/TwDH)
-* [DHaPH](https://ieeexplore.ieee.org/abstract/document/10530441) [TKDE 2024] [source code](https://github.com/QinLab-WFU/DHaPH)
+[DCHMT](https://dl.acm.org/doi/10.1145/3503161.3548187) [ACM MM 2022] [source code](https://github.com/kalenforn/DCHMT)  
+[DSPH](https://ieeexplore.ieee.org/document/10149001) [TCSVT 2023] [source code](https://github.com/QinLab-WFU/DSPH)  
+[MITH](https://dl.acm.org/doi/10.1145/3581783.3612411) [ACM MM 2023] [source code](https://github.com/DarrenZZhang/MM23-MITH)  
+[DNpH](https://ieeexplore.ieee.org/document/10379137) [TMM 2024] [source code](https://github.com/QinLab-WFU/DNpH)  
+[DNPH](https://dl.acm.org/doi/abs/10.1145/3643639) [TOMM 2024] [source code](https://github.com/QinLab-WFU/OUR-DNPH)  
+[TwDH](https://ieeexplore.ieee.org/document/10487033) [TMM 2024] [source code](https://github.com/kalenforn/clip-based-cross-modal-hash/tree/main/runners/TwDH)  
+[DHaPH](https://ieeexplore.ieee.org/abstract/document/10530441) [TKDE 2024] [source code](https://github.com/QinLab-WFU/DHaPH)  
 
 
 ## Processing dataset
@@ -47,10 +47,10 @@ After the dataset has been prepared, we could run the follow command to train.
 
 
 ## Acknowledegements
-[DCHMT](https://github.com/kalenforn/DCHMT)
-[DSPH](https://github.com/QinLab-WFU/DSPH)
-[MITH](https://github.com/DarrenZZhang/MM23-MITH)
-[DNpH](https://github.com/QinLab-WFU/DNpH)
-[DNPH](https://github.com/QinLab-WFU/OUR-DNPH)
-[TwDH](https://github.com/kalenforn/clip-based-cross-modal-hash/tree/main/runners/TwDH)
-[DHaPH](https://github.com/QinLab-WFU/DHaPH)
+[DCHMT](https://github.com/kalenforn/DCHMT)  
+[DSPH](https://github.com/QinLab-WFU/DSPH)  
+[MITH](https://github.com/DarrenZZhang/MM23-MITH)  
+[DNpH](https://github.com/QinLab-WFU/DNpH)  
+[DNPH](https://github.com/QinLab-WFU/OUR-DNPH)  
+[TwDH](https://github.com/kalenforn/clip-based-cross-modal-hash/tree/main/runners/TwDH)  
+[DHaPH](https://github.com/QinLab-WFU/DHaPH)  
