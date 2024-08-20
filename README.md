@@ -48,3 +48,9 @@ After the dataset has been prepared, we could run the follow command to train.
 
 ## Acknowledegements
 [DCHMT](https://github.com/kalenforn/DCHMT)
+[DSPH](https://github.com/QinLab-WFU/DSPH)
+[MITH](https://github.com/DarrenZZhang/MM23-MITH)
+[DNpH](https://github.com/QinLab-WFU/DNpH)
+[DNPH](https://github.com/QinLab-WFU/OUR-DNPH)
+[TwDH](https://github.com/kalenforn/clip-based-cross-modal-hash/tree/main/runners/TwDH)
+[DHaPH](https://github.com/QinLab-WFU/DHaPH)
