@@ -42,6 +42,9 @@ You should copy ViT-B-32.pt to this dir.
 
 ## Start
 
+for example
+
+
 DSPH:
 > python main.py --method DSPH --is-train --dataset coco --caption-file caption.mat --index-file index.mat --label-file label.mat --lr 0.001 --output-dim 64 --save-dir ./result/coco/64 --clip-path ./ViT-B-32.pt --batch-size 128 --numclass 80
 
