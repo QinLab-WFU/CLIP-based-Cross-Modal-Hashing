@@ -50,7 +50,7 @@ DCHMT:
 
 
 DSPH:
-> python main.py --method DSPH --is-train --dataset coco --caption-file caption.mat --index-file index.mat --label-file label.mat --lr 0.001 --output-dim 64 --save-dir ./result/DSPH/coco/64 --clip-path ./ViT-B-32.pt --batch-size 128 --numclass 80
+> python main.py --method DSPH --is-train --dataset coco --caption-file caption.mat --index-file index.mat --label-file label.mat --lr 0.001 --output-dim 64 --save-dir ./result/DSPH/coco/64 --clip-path ./ViT-B-32.pt --batch-size 128 --numclass 80 --alpha 0.8
 
 
 MITH:
