@@ -66,7 +66,7 @@ DNPH
 
  
 TwDH:
-> python main.py --method TwDH --is-train --dataset coco --caption-file caption.mat --index-file index.mat --label-file label.mat --lr 0.001 --output-dim 512 --save-dir ./result/TwDH/coco/512 --clip-path ./ViT-B-32.pt --batch-size 128 --long_center ./train/TwDH/center/coco/long --short_center ./train/TwDH/center/coco/short --trans-matrix ./train/TwDH/center/coco/trans
+> python main.py --method TwDH --is-train --dataset coco --caption-file caption.mat --index-file index.mat --label-file label.mat --lr 0.001 --output-dim 512 --save-dir ./result/TwDH/coco/512 --clip-path ./ViT-B-32.pt --batch-size 128 --long_center ./train/TwDH/center/coco/long --short_center ./train/TwDH/center/coco/short --trans_matrix ./train/TwDH/center/coco/trans
 
 
 DHaPH
