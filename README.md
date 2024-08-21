@@ -40,7 +40,7 @@ Pretrained model will be found in the 30 lines of [CLIP/clip/clip.py](https://gi
 
 You should copy ViT-B-32.pt to this dir.
 
-## Start
+## Training
 
 
 First, the 'method' parameter needs to be changed in main.py. Then, run the following command.
