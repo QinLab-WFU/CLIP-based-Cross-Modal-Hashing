@@ -74,7 +74,7 @@ DHaPH
 > python main.py --method DHaPH --is-train --dataset coco --caption-file caption.mat --index-file index.mat --label-file label.mat --lr 0.001 --output-dim 64 --save-dir ./result/DHaPH/coco/64 --clip-path ./ViT-B-32.pt --batch-size 128 --HM 500 --margin 0.1 --topk 15 --alpha 1 --tau 0.3
 
 
-.DMsH-LN:
+DMsH-LN:
 > python main.py --method DMsH-LN --is-train --dataset flickr25k --caption-file caption.mat --index-file index.mat --label-file label.mat --lr 0.001 --output-dim 16 --save-dir ./result/DMsH-LN/flickr25k/16 --clip-path ./ViT-B-32.pt --batch-size 128 --numclass 24 
 ## Acknowledegements
 [DCHMT](https://github.com/kalenforn/DCHMT)  
@@ -84,4 +84,5 @@ DHaPH
 [DNPH](https://github.com/QinLab-WFU/OUR-DNPH)  
 [TwDH](https://github.com/kalenforn/clip-based-cross-modal-hash/tree/main/runners/TwDH)  
 [DHaPH](https://github.com/QinLab-WFU/DHaPH)
+
 [DMsH-LN](https://github.com/QinLab-WFU/DMsH-LN)
