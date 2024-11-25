@@ -83,5 +83,5 @@ DMsH-LN:
 [DNpH](https://github.com/QinLab-WFU/DNpH)  
 [DNPH](https://github.com/QinLab-WFU/OUR-DNPH)  
 [TwDH](https://github.com/kalenforn/clip-based-cross-modal-hash/tree/main/runners/TwDH)  
-[DHaPH](https://github.com/QinLab-WFU/DHaPH)
+[DHaPH](https://github.com/QinLab-WFU/DHaPH)  
 [DMsH-LN](https://github.com/QinLab-WFU/DMsH-LN)
