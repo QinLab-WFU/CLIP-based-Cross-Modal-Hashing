@@ -9,9 +9,9 @@
 [DNPH](https://dl.acm.org/doi/abs/10.1145/3643639) [TOMM 2024] [Source Code](https://github.com/QinLab-WFU/OUR-DNPH)  
 [TwDH](https://ieeexplore.ieee.org/document/10487033) [TMM 2024] [Source Code](https://github.com/kalenforn/clip-based-cross-modal-hash/tree/main/runners/TwDH)  
 [DHaPH](https://ieeexplore.ieee.org/abstract/document/10530441) [TKDE 2024] [Source Code](https://github.com/QinLab-WFU/DHaPH)  
-[DMsH-LN](https://ieeexplore.ieee.org/abstract/document/10530441) [Neucomputing 2024] [Source Code](https://github.com/QinLab-WFU/DMsH-LN)  
+[DMsH-LN](https://www.sciencedirect.com/science/article/pii/S0925231224016011) [Neucomputing 2024] [Source Code](https://github.com/QinLab-WFU/DMsH-LN)  
 
-DMsH-LN
+
 ## Processing dataset
 Before training, you need to download the oringal data from [coco](https://www.kaggle.com/datasets/awsaf49/coco-2017-dataset)(include 2017 train,val and annotations), nuswide [Google drive](https://drive.google.com/file/d/11w3J98uL_KHWn9j22GeKWc5K_AYM5U3V/view?usp=drive_link), mirflickr25k [Baidu, 提取码:u9e1](https://pan.baidu.com/s/1upgnBNNVfBzMiIET9zPfZQ) or [Google drive](https://drive.google.com/file/d/18oGgziSwhRzKlAjbqNZfj-HuYzbxWYTh/view?usp=sharing) (include mirflickr25k and mirflickr25k_annotations_v080), 
 then use the "data/make_XXX.py" to generate .mat file
@@ -74,6 +74,8 @@ DHaPH
 > python main.py --method DHaPH --is-train --dataset coco --caption-file caption.mat --index-file index.mat --label-file label.mat --lr 0.001 --output-dim 64 --save-dir ./result/DHaPH/coco/64 --clip-path ./ViT-B-32.pt --batch-size 128 --HM 500 --margin 0.1 --topk 15 --alpha 1 --tau 0.3
 
 
+DMsH-LN:
+> python main.py --method DMsH-LN --is-train --dataset flickr25k --caption-file caption.mat --index-file index.mat --label-file label.mat --lr 0.001 --output-dim 16 --save-dir ./result/DMsH-LN/flickr25k/16 --clip-path ./ViT-B-32.pt --batch-size 128 --numclass 24 
 ## Acknowledegements
 [DCHMT](https://github.com/kalenforn/DCHMT)  
 [DSPH](https://github.com/QinLab-WFU/DSPH)  
@@ -81,4 +83,5 @@ DHaPH
 [DNpH](https://github.com/QinLab-WFU/DNpH)  
 [DNPH](https://github.com/QinLab-WFU/OUR-DNPH)  
 [TwDH](https://github.com/kalenforn/clip-based-cross-modal-hash/tree/main/runners/TwDH)  
-[DHaPH](https://github.com/QinLab-WFU/DHaPH)  
+[DHaPH](https://github.com/QinLab-WFU/DHaPH)
+[DMsH-LN](https://github.com/QinLab-WFU/DMsH-LN)
