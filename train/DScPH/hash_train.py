@@ -1,51 +1,51 @@
-# DNPH
-# paper [Deep Neighborhood-aware Proxy Hashing with Uniform Distribution Constraint for Cross-modal Retrieval, TOMM 2024]
-# (https://dl.acm.org/doi/10.1145/3643639)
 
-from model.DNPH_TOMM import MDNPH
+
+from model.DScPH import MDScPH
 import os
 import torch
 
 from train.base import TrainBase
 from model.base.optimization import BertAdam
 from .get_args import get_args
-from .loss import DNPH_out
-from .b_reg import rand_unit_rect, gene_noise
+from .CPF_loss import CPF
+from .FAST_HPP import HouseHolder, bit_var_loss
 import time
+import torch.nn.functional as F
 
 
-class DNPHTOMMTrainer(TrainBase):
+class DScPHTrainer(TrainBase):
 
     def __init__(self,
                 rank=1):
         args = get_args()
-        super(DNPHTOMMTrainer, self).__init__(args, rank)
+        super(DScPHTrainer, self).__init__(args, rank)
         self.logger.info("dataset len: {}".format(len(self.train_loader.dataset)))
         self.run()
 
     def _init_model(self):
         self.logger.info("init model.")
-
-        self.model = MDNPH(outputDim=self.args.output_dim, num_classes=self.args.numclass, clipPath=self.args.clip_path,
+        self.model = MDScPH(outputDim=self.args.output_dim, clipPath=self.args.clip_path,
                             writer=self.writer, logger=self.logger, is_train=self.args.is_train).to(self.rank)
+
         if self.args.pretrained != "" and os.path.exists(self.args.pretrained):
             self.logger.info("load pretrained model.")
             self.model.load_state_dict(torch.load(self.args.pretrained, map_location=f"cuda:{self.rank}"))
-        
+
         self.model.float()
+        self.rot = HouseHolder(dim=self.args.output_dim).to(self.rank)
+        self.cpf = CPF(embed_dim=self.args.output_dim, n_classes=self.args.numclass, device=1)
         self.optimizer = BertAdam([
                     {'params': self.model.clip.parameters(), 'lr': self.args.clip_lr},
                     {'params': self.model.image_hash.parameters(), 'lr': self.args.lr},
                     {'params': self.model.text_hash.parameters(), 'lr': self.args.lr},
-                    {'params': self.model.image_pre.parameters(), 'lr': self.args.lr},
-                    {'params': self.model.text_pre.parameters(), 'lr': self.args.lr}
-                    ], lr=self.args.lr, warmup=self.args.warmup_proportion, schedule='warmup_cosine', 
+                    {'params': self.cpf.parameters(), 'lr': self.args.lr}
+                    ], lr=self.args.lr, warmup=self.args.warmup_proportion, schedule='warmup_cosine',
                     b1=0.9, b2=0.98, e=1e-6, t_total=len(self.train_loader) * self.args.epochs,
                     weight_decay=self.args.weight_decay, max_grad_norm=1.0)
 
-        self.DNPH = DNPH_out().to(self.rank)
+        # self.hyp = HyP().to(self.rank)
+        # self.optimizer_loss = torch.optim.SGD(params=self.hyp.parameters(), lr=0.02, momentum=0.9, weight_decay=0.0005)
         self.total_time = 0
-        self.optimizer_loss = torch.optim.SGD(params=self.DNPH.parameters(), lr=1e-4)
         # print(self.model)
 
     def train_epoch(self, epoch):
@@ -56,36 +56,28 @@ class DNPHTOMMTrainer(TrainBase):
             start_time = time.time()
             self.global_step += 1
             image.float()
-
             image = image.to(self.rank, non_blocking=True)
             text = text.to(self.rank, non_blocking=True)
             label = label.to(self.rank, non_blocking=True)
-            label = label.float()
 
-            hash_img, pre_img, hash_text, pre_text = self.model(image, text)
+            hash_img, hash_text = self.model(image, text)
+            loss = self.cpf(hash_img, hash_text, label)
+            img_rot = F.normalize(self.rot(hash_img.T).T)
+            text_rot = F.normalize(self.rot(hash_text.T).T)
+            criterion = bit_var_loss()
+            q_img_loss = criterion(img_rot)
+            q_text_loss = criterion(text_rot)
+            lossall = loss + q_img_loss + q_text_loss
 
-            batch_size_, code_length = hash_img.shape
-            s_vector = rand_unit_rect(batch_size_, code_length)
 
-            i_noises = gene_noise(hash_img.cpu().detach().numpy(), s_vector)
-            t_noises = gene_noise(hash_text.cpu().detach().numpy(), s_vector)
 
-            i_noises = torch.from_numpy(i_noises).float().to(self.rank)
-            t_noises = torch.from_numpy(t_noises).float().to(self.rank)
-            i_noise_loss = hash_img.mul(i_noises).sum(dim=-1).mean()
-            t_noise_loss = hash_text.mul(t_noises).sum(dim=-1).mean()
-            noise_loss = i_noise_loss + t_noise_loss
-            #
-            # loss1 = self.DNPH(hash_img, hash_text, pre_img, pre_text, label, label)
-            loss1 = 1
-
-            loss = loss1 - 0.1 * noise_loss
             all_loss += loss
 
             self.optimizer.zero_grad()
-            loss.backward()
+            lossall.backward()
             self.optimizer.step()
             self.total_time += time.time() - start_time
 
         self.logger.info(f">>>>>> [{epoch}/{self.args.epochs}] loss: {all_loss.data / (len(self.train_loader))}, lr: {'-'.join([str('%.9f'%itm) for itm in sorted(list(set(self.optimizer.get_lr())))])}, time: {self.total_time}")
+
 

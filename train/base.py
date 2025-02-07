@@ -221,7 +221,7 @@ class TrainBase(object):
             self.save_model(epoch)
         self.logger.info(
             f">>>>>>> FINISHED >>>>>> Best epoch, I-T: {self.best_epoch_i}, mAP: {self.max_mapi2t}, T-I: {self.best_epoch_t}, mAP: {self.max_mapt2i}")
-    
+        print("1")
     def valid(self, epoch):
         self.logger.info("Valid.")
         self.change_state(mode="valid")
