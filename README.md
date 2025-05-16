@@ -11,7 +11,7 @@
 [DHaPH](https://ieeexplore.ieee.org/abstract/document/10530441) [TKDE 2024] [Source Code](https://github.com/QinLab-WFU/DHaPH)  
 [DMsH-LN](https://www.sciencedirect.com/science/article/pii/S0925231224016011) [Neucomputing 2024] [Source Code](https://github.com/QinLab-WFU/DMsH-LN)  
 [DScPH](https://ieeexplore.ieee.org/document/10855579) [TMM 2025] [Source Code](https://github.com/QinLab-WFU/DScPH)  
-[DNcH](https://www.sciencedirect.com/science/article/abs/pii/S095741742500987X) [Expert Systems with Applications 2025] [Source Code](https://github.com/QinLab-WFU/DNcH)  
+[DNcH](https://www.sciencedirect.com/science/article/abs/pii/S095741742500987X) [ESWA 2025] [Source Code](https://github.com/QinLab-WFU/DNcH)  
 [DDBH](https://ieeexplore.ieee.org/document/11003934) [TCSVT 2025] [Source Code](https://github.com/QinLab-WFU/DDBH)  
 
 ## Processing dataset
