@@ -82,6 +82,10 @@ DMsH-LN:
 
 DScPH:
 > python main.py --method DScPH --is-train --dataset flickr25k --caption-file caption.mat --index-file index.mat --label-file label.mat --lr 0.001 --output-dim 16 --save-dir ./result/DScPH/flickr25k/16 --clip-path ./ViT-B-32.pt --batch-size 128 --numclass 24
+
+
+DDBH
+> python main.py --method DDBH --is-train --dataset coco --caption-file caption.mat --index-file index.mat --label-file label.mat --lr 0.001 --output-dim 64 --save-dir ./result/DNpH-TMM/coco/64 --clip-path ./ViT-B-32.pt --batch-size 128
 ## Acknowledegements
 [DCHMT](https://github.com/kalenforn/DCHMT)  
 [DSPH](https://github.com/QinLab-WFU/DSPH)  
@@ -91,5 +95,6 @@ DScPH:
 [TwDH](https://github.com/kalenforn/clip-based-cross-modal-hash/tree/main/runners/TwDH)  
 [DHaPH](https://github.com/QinLab-WFU/DHaPH)  
 [DMsH-LN](https://github.com/QinLab-WFU/DMsH-LN)  
-[DScPH](https://github.com/QinLab-WFU/DScPH)
+[DScPH](https://github.com/QinLab-WFU/DScPH)  
+[DDBH](https://github.com/QinLab-WFU/DDBH)
 
