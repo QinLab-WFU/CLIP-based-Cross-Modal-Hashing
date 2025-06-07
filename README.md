@@ -85,7 +85,7 @@ DScPH:
 
 
 DDBH
-> python main.py --method DDBH --is-train --dataset coco --caption-file caption.mat --index-file index.mat --label-file label.mat --lr 0.001 --output-dim 64 --save-dir ./result/DNpH-TMM/coco/64 --clip-path ./ViT-B-32.pt --batch-size 128
+> python main.py --method DDBH --is-train --dataset coco --caption-file caption.mat --index-file index.mat --label-file label.mat --lr 0.001 --output-dim 64 --save-dir ./result/DDBH/coco/64 --clip-path ./ViT-B-32.pt --batch-size 128
 ## Acknowledegements
 [DCHMT](https://github.com/kalenforn/DCHMT)  
 [DSPH](https://github.com/QinLab-WFU/DSPH)  
