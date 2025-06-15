@@ -13,6 +13,7 @@
 [DScPH](https://ieeexplore.ieee.org/document/10855579) [TMM 2025] [Source Code](https://github.com/QinLab-WFU/DScPH)  
 [DNcH](https://www.sciencedirect.com/science/article/abs/pii/S095741742500987X) [ESWA 2025] [Source Code](https://github.com/QinLab-WFU/DNcH)  
 [DDBH](https://ieeexplore.ieee.org/document/11003934) [TCSVT 2025] [Source Code](https://github.com/QinLab-WFU/DDBH)  
+[DAGtH](https://www.sciencedirect.com/science/article/abs/pii/S0957417425021852) [ESWA 2025] [Source Code](https://github.com/QinLab-WFU/OUR-DAGtH)  
 
 ## Processing dataset
 Before training, you need to download the oringal data from [coco](https://www.kaggle.com/datasets/awsaf49/coco-2017-dataset)(include 2017 train,val and annotations), nuswide [Google drive](https://drive.google.com/file/d/11w3J98uL_KHWn9j22GeKWc5K_AYM5U3V/view?usp=drive_link), mirflickr25k [Baidu, 提取码:u9e1](https://pan.baidu.com/s/1upgnBNNVfBzMiIET9zPfZQ) or [Google drive](https://drive.google.com/file/d/18oGgziSwhRzKlAjbqNZfj-HuYzbxWYTh/view?usp=sharing) (include mirflickr25k and mirflickr25k_annotations_v080), 
