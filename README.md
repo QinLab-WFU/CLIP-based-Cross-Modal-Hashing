@@ -14,6 +14,11 @@
 [DNcH](https://www.sciencedirect.com/science/article/abs/pii/S095741742500987X) [ESWA 2025] [Source Code](https://github.com/QinLab-WFU/DNcH)  
 [DDBH](https://ieeexplore.ieee.org/document/11003934) [TCSVT 2025] [Source Code](https://github.com/QinLab-WFU/DDBH)  
 [DAGtH](https://www.sciencedirect.com/science/article/abs/pii/S0957417425021852) [ESWA 2025] [Source Code](https://github.com/QinLab-WFU/OUR-DAGtH)  
+[DPBE](https://dl.acm.org/doi/10.1145/3746027.3754811) [ACM MM 2025] [Source Code](https://github.com/QinLab-WFU/DPBE)  
+[DDWSH](https://ieeexplore.ieee.org/document/11353914) [TMM 2026] [Source Code](https://github.com/QinLab-WFU/DDWSH)  
+[DPSIH]() [AAAI 2026] [Source Code](https://github.com/QinLab-WFU/DPSIH)  
+[DGHDGH]() [ICLR 2026] [Source Code](https://github.com/QinLab-WFU/DGHDGH)  
+
 
 ## Processing dataset
 Before training, you need to download the oringal data from [coco](https://www.kaggle.com/datasets/awsaf49/coco-2017-dataset)(include 2017 train,val and annotations), nuswide [Google drive](https://drive.google.com/file/d/11w3J98uL_KHWn9j22GeKWc5K_AYM5U3V/view?usp=drive_link), mirflickr25k [Baidu, 提取码:u9e1](https://pan.baidu.com/s/1upgnBNNVfBzMiIET9zPfZQ) or [Google drive](https://drive.google.com/file/d/18oGgziSwhRzKlAjbqNZfj-HuYzbxWYTh/view?usp=sharing) (include mirflickr25k and mirflickr25k_annotations_v080), 
@@ -44,49 +49,16 @@ Pretrained model will be found in the 30 lines of [CLIP/clip/clip.py](https://gi
 
 You should copy ViT-B-32.pt to this dir.
 
+## Prepare Stochman for DPBE
+> cd ./train/DPBE/stochman/
+> 
+> python setup.py install
+You may need to manually adjust the import path after installing locally.
+
 ## Training
 
+> python main.py --method DCHMT --dataset coco --lr 0.001 --output-dim 64 --clip-path ./ViT-B-32.pt
 
-First, the 'method' parameter needs to be changed in main.py. Then, run the following command.
-
-DCHMT:
-> python main.py --method DCHMT --is-train --dataset coco --caption-file caption.mat --index-file index.mat --label-file label.mat --lr 0.001 --output-dim 64 --save-dir ./result/DCHMT/coco/64 --clip-path ./ViT-B-32.pt --batch-size 128 --similarity-function euclidean --loss-type l2 --vartheta 0.5 --sim-threshold 0.1
-
-
-DSPH:
-> python main.py --method DSPH --is-train --dataset coco --caption-file caption.mat --index-file index.mat --label-file label.mat --lr 0.001 --output-dim 64 --save-dir ./result/DSPH/coco/64 --clip-path ./ViT-B-32.pt --batch-size 128 --numclass 80 --alpha 0.8
-
-
-MITH:
-> python main.py --method MITH --is-train --dataset coco --caption-file caption.mat --index-file index.mat --label-file label.mat --lr 0.001 --output-dim 64 --save-dir ./result/MITH/coco/64 --clip-path ./ViT-B-32.pt --batch-size 128
-
-
-DNpH
-> python main.py --method DNpH-TMM --is-train --dataset coco --caption-file caption.mat --index-file index.mat --label-file label.mat --lr 0.001 --output-dim 64 --save-dir ./result/DNpH-TMM/coco/64 --clip-path ./ViT-B-32.pt --batch-size 128
-
-
-DNPH
-> python main.py --method DNPH-TOMM --is-train --dataset coco --caption-file caption.mat --index-file index.mat --label-file label.mat --lr 0.001 --output-dim 64 --save-dir ./result/DNpH-TMM/coco/64 --clip-path ./ViT-B-32.pt --batch-size 128 --numclass 80
-
- 
-TwDH:
-> python main.py --method TwDH --is-train --dataset coco --caption-file caption.mat --index-file index.mat --label-file label.mat --lr 0.001 --output-dim 512 --save-dir ./result/TwDH/coco/512 --clip-path ./ViT-B-32.pt --batch-size 128 --long_center ./train/TwDH/center/coco/long --short_center ./train/TwDH/center/coco/short --trans_matrix ./train/TwDH/center/coco/trans
-
-
-DHaPH
-> python main.py --method DHaPH --is-train --dataset coco --caption-file caption.mat --index-file index.mat --label-file label.mat --lr 0.001 --output-dim 64 --save-dir ./result/DHaPH/coco/64 --clip-path ./ViT-B-32.pt --batch-size 128 --HM 500 --margin 0.1 --topk 15 --alpha 1 --tau 0.3
-
-
-DMsH-LN:
-> python main.py --method DMsH-LN --is-train --dataset flickr25k --caption-file caption.mat --index-file index.mat --label-file label.mat --lr 0.001 --output-dim 16 --save-dir ./result/DMsH-LN/flickr25k/16 --clip-path ./ViT-B-32.pt --batch-size 128 --numclass 24
-
-
-DScPH:
-> python main.py --method DScPH --is-train --dataset flickr25k --caption-file caption.mat --index-file index.mat --label-file label.mat --lr 0.001 --output-dim 16 --save-dir ./result/DScPH/flickr25k/16 --clip-path ./ViT-B-32.pt --batch-size 128 --numclass 24
-
-
-DDBH
-> python main.py --method DDBH --is-train --dataset coco --caption-file caption.mat --index-file index.mat --label-file label.mat --lr 0.001 --output-dim 64 --save-dir ./result/DDBH/coco/64 --clip-path ./ViT-B-32.pt --batch-size 128
 ## Acknowledegements
 [DCHMT](https://github.com/kalenforn/DCHMT)  
 [DSPH](https://github.com/QinLab-WFU/DSPH)  
@@ -97,5 +69,8 @@ DDBH
 [DHaPH](https://github.com/QinLab-WFU/DHaPH)  
 [DMsH-LN](https://github.com/QinLab-WFU/DMsH-LN)  
 [DScPH](https://github.com/QinLab-WFU/DScPH)  
-[DDBH](https://github.com/QinLab-WFU/DDBH)
-
+[DDBH](https://github.com/QinLab-WFU/DDBH)  
+[DPBE](https://github.com/QinLab-WFU/DPBE)  
+[DDWSH](https://github.com/QinLab-WFU/DDWSH)  
+[DPSIH](https://github.com/QinLab-WFU/DPSIH)  
+[DGHDGH](https://github.com/QinLab-WFU/DGHDGH)  
