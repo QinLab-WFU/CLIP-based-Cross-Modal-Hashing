@@ -53,6 +53,7 @@ You should copy ViT-B-32.pt to this dir.
 > cd ./train/DPBE/stochman/
 > 
 > python setup.py install
+
 You may need to manually adjust the import path after installing locally.
 
 ## Training
