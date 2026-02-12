@@ -16,8 +16,8 @@
 [DAGtH](https://www.sciencedirect.com/science/article/abs/pii/S0957417425021852) [ESWA 2025] [Source Code](https://github.com/QinLab-WFU/OUR-DAGtH)  
 [DPBE](https://dl.acm.org/doi/10.1145/3746027.3754811) [ACM MM 2025] [Source Code](https://github.com/QinLab-WFU/DPBE)  
 [DDWSH](https://ieeexplore.ieee.org/document/11353914) [TMM 2026] [Source Code](https://github.com/QinLab-WFU/DDWSH)  
-[DPSIH]() [AAAI 2026] [Source Code](https://github.com/QinLab-WFU/DPSIH)  
-[DGHDGH]() [ICLR 2026] [Source Code](https://github.com/QinLab-WFU/DGHDGH)  
+DPSIH [AAAI 2026] [Source Code](https://github.com/QinLab-WFU/DPSIH)  
+DGHDGH [ICLR 2026] [Source Code](https://github.com/QinLab-WFU/DGHDGH)  
 
 
 ## Processing dataset
